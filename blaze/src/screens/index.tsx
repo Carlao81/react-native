@@ -1,12 +1,20 @@
-import React from "react"
-import { View, Text} from 'react-native';
+import React, { useState } from 'react'
+import { View, Text , TextInput } from 'react-native';
 import { styles } from "./styles";
 
 export function SignIn() {
+  const [text, setText] = useState ("tu não digitou nada");
   return( 
-    <View style ={{flex: 1, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
+    <View style={styles.container}>
      <Text>I am your father</Text>
-    </View>
+     <TextInput style={styles.input} 
+     onChangeText={setText}/>   
+  
+     <Text>
+
+    voce digitou: {text}
+     </Text>
+  </View>
   );
 }
 
